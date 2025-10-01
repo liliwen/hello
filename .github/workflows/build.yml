@@ -1,16 +1,29 @@
 name: 编译工程
 on: [push]
 jobs:
-  build-hello:
+  build-hello-linux:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v5
-      - name: 编译程序
+      - name: 编译linux程序
         run: |
           mkdir build
           cd build
           cmake ..
           cmake --build .
-      - name: 执行程序
+      - name: 执行linux程序
         run: ls build && ./build/Hello
+  build-hello-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+      - name: 编译windows程序
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+      - name: 执行windows程序
+        run: dir build && ./build/Hello
