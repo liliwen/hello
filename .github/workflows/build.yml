@@ -14,6 +14,19 @@ jobs:
           cmake --build .
       - name: 执行linux程序
         run: ls build && ./build/Hello
+  build-hello-linux-arm:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+      - name: 编译linux程序
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+      - name: 执行linux程序
+        run: ls build && ./build/Hello
   build-hello-windows:
     runs-on: windows-latest
     steps:
