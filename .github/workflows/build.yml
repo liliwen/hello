@@ -13,4 +13,4 @@ jobs:
           cmake ..
           cmake --build .
       - name: 执行程序
-        run: ls build
+        run: ls build && ./build/Hello
