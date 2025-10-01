@@ -27,5 +27,5 @@ jobs:
           cmake --build .
       - name: 执行windows程序
         run: | 
-          dir build
-          .\Debug\Hello.exe
+          dir build\Debug
+          .\build\Debug\Hello.exe
