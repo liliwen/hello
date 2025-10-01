@@ -6,8 +6,9 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v5
-      - run: |
+      - name: 编译程序
+        run: |
           mkdir build
           cd build
           cmake ..
-          cmake build .
+          cmake --build .
