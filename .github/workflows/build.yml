@@ -1,12 +1,13 @@
 name: 编译工程
 on: [push]
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Check out repository code
-      uses: actions/checkout@v5
-    - run: |
-        mkdir build
-        cd build
-        cmake ..
-        cmake build .
+  build-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+      - run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake build .
